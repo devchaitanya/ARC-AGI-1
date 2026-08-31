@@ -149,11 +149,19 @@ into a wrong-shaped grid.
 | `wider_d384_80ep` | 10.8M | 0.75% | 0.26–2.18% | 76.40% | p=0.070 |
 | `deeper_12L_80ep` | 9.5M | 0.75% | — | — | — |
 | `no_ttt_identity` | 4.8M | 0.25% | 0.04–1.40% | 71.94% | **p=0.021** |
+| *copy the input unchanged* | 0 | 0% | — | *77.88%* | *trivial baseline* |
+| *predict all background* | 0 | 0% | — | *49.40%* | *trivial baseline* |
 
-Controls for cell accuracy, measured on identically-shaped cases: predicting all
-background scores 49.40%, the majority demo colour 55.64%, and copying the input
-unchanged **77.88%** against the model's 83.51%. Cell accuracy should never be
-quoted without that last comparison.
+The last two rows are why the cell-accuracy column must never be read on its
+own: **copying the input unchanged scores 77.88%**, because ARC grids are mostly
+background and many outputs resemble their input. On the 275 cases where both
+are defined the model scores **83.51% against copy-input's 77.88%** — a real
+but modest +5.62pp, winning on 164 cases, tying 29 and losing 82.
+
+Cell accuracy earns its place for resolution, not for headline value: at a 2.5%
+exact-match rate it is the only signal fine-grained enough to distinguish runs
+(it is what shows LoRA genuinely degrades the model by 2.2pp while systematic
+leave-one-out leaves it flat). Exact match remains the benchmark.
 
 ## What the experiments showed
 
