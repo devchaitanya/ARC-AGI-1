@@ -1,0 +1,34 @@
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+.venv/
+venv/
+env/
+
+/data/
+/datasets/
+checkpoints/
+outputs/
+runs/
+wandb/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+.DS_Store
+*.log
+tmp/
+temp/
+
+# Institutional infrastructure notes: contains account ID, internal 10.5.18.x
+# addresses and SSH details for the IIT KGP CSE lab. Keep local.
+CLUSTER_ACCESS.md
+
+# Superseded exploratory notebooks, kept locally for reference only
+notebooks/archive/

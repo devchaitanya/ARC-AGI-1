@@ -1,0 +1,31 @@
+data:
+  max_grid: 30
+  max_demos: 4
+  augment: true
+  color_permutations: 16
+  seed: 42
+
+model:
+  max_grid: 30
+  max_demos: 4
+  dim: 256
+  heads: 8
+  z_layers: 2
+  y_layers: 1
+  outer_steps: 6
+  inner_steps: 2
+  mlp_ratio: 4.0
+  dropout: 0.1
+  num_tasks: 512
+  max_params: 50000000
+
+training:
+  batch_size: 2
+  lr: 0.0003
+  weight_decay: 0.05
+  warmup_steps: 200
+  grad_clip: 1.0
+  shape_loss_weight: 0.05
+  ema_decay: 0.999
+  checkpoint_dir: checkpoints
+  amp: true
